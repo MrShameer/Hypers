@@ -104,6 +104,15 @@
     End Sub
 
     Private Sub lv_Click(sender As Object, e As EventArgs) Handles lv.Click
+
+        For Each row As DataGridViewRow In grdcart.Rows
+            If (row.Cells(0).Value = orderid.Text And row.Cells(1).Value = productid.Text) Then
+                row.Cells(2).Value = Val(row.Cells(2).Value) + quantity.Text
+                Return
+            Else
+
+            End If
+        Next
         grdcart.Rows.Add(orderid.Text, productid.Text, quantity.Text, totalprice.Text)
         cartprice.Text = Val(totalprice.Text) + Val(cartprice.Text)
     End Sub
@@ -120,6 +129,7 @@
 
     Private Sub remove_Click(sender As Object, e As EventArgs) Handles remove.Click
         grdcart.Rows.RemoveAt(grdcart.SelectedRows(0).Index)
+        cartprice.Text = Val(totalprice.Text) + Val(cartprice.Text)
     End Sub
 
     Private Sub customer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles customer.SelectedIndexChanged
