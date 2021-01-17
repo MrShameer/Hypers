@@ -104,10 +104,10 @@
     End Sub
 
     Private Sub lv_Click(sender As Object, e As EventArgs) Handles lv.Click
-
         For Each row As DataGridViewRow In grdcart.Rows
             If (row.Cells(0).Value = orderid.Text And row.Cells(1).Value = productid.Text) Then
                 row.Cells(2).Value = Val(row.Cells(2).Value) + quantity.Text
+                row.Cells(3).Value = row.Cells(2).Value * pprice.Text
                 cartprice.Text = Val(totalprice.Text) + Val(cartprice.Text)
                 Return
             Else
@@ -129,11 +129,77 @@
     End Sub
 
     Private Sub remove_Click(sender As Object, e As EventArgs) Handles remove.Click
-        grdcart.Rows.RemoveAt(grdcart.SelectedRows(0).Index)
-        cartprice.Text = Val(totalprice.Text) + Val(cartprice.Text)
+        Try
+            Dim i As Integer = grdcart.SelectedRows(0).Index
+            cartprice.Text = Val(cartprice.Text) - Val(grdcart.Rows(i).Cells(3).Value)
+            grdcart.Rows.RemoveAt(i)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub customer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles customer.SelectedIndexChanged
         grdcart.Rows.Clear()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim mytransaction As OleDb.OleDbTransaction
+        myconnection2.Open()
+        mytransaction = myconnection2.BeginTransaction
+        Try
+
+
+            ''Dim mytransactions As OleDb.OleDbTransaction
+            '' myconnection2.Open()
+            '' mytransactions = myconnection2.BeginTransaction
+
+            Dim orderids As String = orderid.Text
+            Dim orderdate As String = DateTime.Now.ToString("dd MMMM yyyy, hh:mm dddd")
+            Dim customerids As String = customer.Text
+            Dim staffids As String = staffid.Text
+            '' Dim regdate As String = grd_newreg(4, i).Value
+
+            Dim mysqls As String = "INSERT INTO TBL_ORDERS_A173586 VALUES ('" & orderids & "', '" & orderdate & "', '" & customerids & "', '" & staffids & "')"
+            Dim mywriters As New OleDb.OleDbCommand(mysqls, myconnection2,
+                mytransaction)
+            mywriters.ExecuteNonQuery()
+
+            For i As Integer = 0 To grdcart.RowCount - 1
+                Dim orderidss As String = grdcart(0, i).Value
+                Dim productids As String = grdcart(1, i).Value
+                Dim quantitys As String = grdcart(2, i).Value
+                Dim tprices As String = grdcart(3, i).Value
+                '' Dim regdate As String = grd_newreg(4, i).Value
+
+                Dim mysql As String = "INSERT INTO TBL_TRANSACTIONS_A173586 VALUES ('" & orderidss & "', '" & productids & "', '" & quantitys & "', '" & tprices & "')"
+                Dim mywriter As New OleDb.OleDbCommand(mysql, myconnection2,
+                mytransaction)
+                mywriter.ExecuteNonQuery()
+
+            Next
+
+            mytransaction.Commit()
+            myconnection2.Close()
+
+
+            Beep()
+            MsgBox("Transaction successful!")
+            ''refresh_grid()
+            grdcart.Rows.Clear()
+
+            staffid.Text = generate_staff()
+
+            refresh_text(productid.Text)
+
+        Catch ex As Exception
+
+            Beep()
+        '' MsgBox("Problem with transaction:" & vbCrLf & vbCrLf & ex.Message)
+
+        mytransaction.Rollback()
+            myconnection2.Close()
+        '' refresh_grid()
+
+        End Try
     End Sub
 End Class
