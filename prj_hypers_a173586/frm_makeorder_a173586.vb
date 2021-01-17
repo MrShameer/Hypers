@@ -108,6 +108,7 @@
         For Each row As DataGridViewRow In grdcart.Rows
             If (row.Cells(0).Value = orderid.Text And row.Cells(1).Value = productid.Text) Then
                 row.Cells(2).Value = Val(row.Cells(2).Value) + quantity.Text
+                cartprice.Text = Val(totalprice.Text) + Val(cartprice.Text)
                 Return
             Else
 
