@@ -1,4 +1,6 @@
 ﻿Public Class frm_makeorder_a173586
+
+    Dim count As Integer
     Private Sub frm_makeorder_a173586_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '' cust.Text = generate_customer()
         staffid.Text = generate_staff()
@@ -15,7 +17,8 @@
             grdcart.Columns(i).HeaderText = data.Columns(i).ColumnName
         Next
         refresh_text(productid.Text)
-
+        count = 0
+        cartprice.Text = count
     End Sub
 
     Private Sub refresh_text(ids As String)
@@ -36,7 +39,7 @@
         quantity.SelectedIndex = 0
 
         Try
-        pic_student.BackgroundImage = Image.FromFile("Pictures/" & ids & ".jpg")
+            pic_student.BackgroundImage = Image.FromFile("Pictures/" & ids & ".jpg")
         Catch ex As Exception
             pic_student.BackgroundImage = Image.FromFile("pictures/nophoto.jpg")
         End Try
@@ -102,6 +105,7 @@
 
     Private Sub lv_Click(sender As Object, e As EventArgs) Handles lv.Click
         grdcart.Rows.Add(orderid.Text, productid.Text, quantity.Text, totalprice.Text)
+        cartprice.Text = Val(totalprice.Text) + Val(cartprice.Text)
     End Sub
 
     Private Sub quantity_SelectedIndexChanged(sender As Object, e As EventArgs) Handles quantity.SelectedIndexChanged
@@ -116,5 +120,9 @@
 
     Private Sub remove_Click(sender As Object, e As EventArgs) Handles remove.Click
         grdcart.Rows.RemoveAt(grdcart.SelectedRows(0).Index)
+    End Sub
+
+    Private Sub customer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles customer.SelectedIndexChanged
+        grdcart.Rows.Clear()
     End Sub
 End Class

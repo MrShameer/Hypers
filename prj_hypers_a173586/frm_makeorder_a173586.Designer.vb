@@ -57,6 +57,8 @@ Partial Class frm_makeorder_a173586
         Me.Label15 = New System.Windows.Forms.Label()
         Me.totalprice = New System.Windows.Forms.TextBox()
         Me.remove = New System.Windows.Forms.Button()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.cartprice = New System.Windows.Forms.TextBox()
         CType(Me.grdcart, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pic_student, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BasicIndo.SuspendLayout()
@@ -144,11 +146,11 @@ Partial Class frm_makeorder_a173586
         Me.grdcart.AllowUserToResizeRows = False
         Me.grdcart.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.grdcart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grdcart.Location = New System.Drawing.Point(25, 595)
+        Me.grdcart.Location = New System.Drawing.Point(25, 562)
         Me.grdcart.Name = "grdcart"
         Me.grdcart.ReadOnly = True
         Me.grdcart.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.grdcart.Size = New System.Drawing.Size(718, 150)
+        Me.grdcart.Size = New System.Drawing.Size(718, 183)
         Me.grdcart.TabIndex = 43
         '
         'Label6
@@ -156,7 +158,7 @@ Partial Class frm_makeorder_a173586
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(345, 572)
+        Me.Label6.Location = New System.Drawing.Point(345, 526)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(66, 20)
         Me.Label6.TabIndex = 44
@@ -331,7 +333,7 @@ Partial Class frm_makeorder_a173586
         Me.lv.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.lv.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lv.ForeColor = System.Drawing.Color.Green
-        Me.lv.Location = New System.Drawing.Point(801, 623)
+        Me.lv.Location = New System.Drawing.Point(797, 576)
         Me.lv.Name = "lv"
         Me.lv.Size = New System.Drawing.Size(211, 32)
         Me.lv.TabIndex = 65
@@ -426,6 +428,25 @@ Partial Class frm_makeorder_a173586
         Me.remove.Text = "REMOVE FROM CART"
         Me.remove.UseVisualStyleBackColor = False
         '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.Transparent
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(784, 637)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(133, 20)
+        Me.Label16.TabIndex = 76
+        Me.Label16.Text = "TOTAL PRICE :"
+        '
+        'cartprice
+        '
+        Me.cartprice.Location = New System.Drawing.Point(923, 635)
+        Me.cartprice.Name = "cartprice"
+        Me.cartprice.ReadOnly = True
+        Me.cartprice.Size = New System.Drawing.Size(100, 20)
+        Me.cartprice.TabIndex = 75
+        '
         'frm_makeorder_a173586
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -433,6 +454,8 @@ Partial Class frm_makeorder_a173586
         Me.BackgroundImage = Global.prj_hypers_a173586.My.Resources.Resources.Main_Menu_BG13
         Me.ClientSize = New System.Drawing.Size(1060, 836)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.cartprice)
         Me.Controls.Add(Me.remove)
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.totalprice)
@@ -510,4 +533,6 @@ Partial Class frm_makeorder_a173586
     Friend WithEvents Label15 As Label
     Friend WithEvents totalprice As TextBox
     Friend WithEvents remove As Button
+    Friend WithEvents Label16 As Label
+    Friend WithEvents cartprice As TextBox
 End Class
