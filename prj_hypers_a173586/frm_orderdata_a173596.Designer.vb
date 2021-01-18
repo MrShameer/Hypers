@@ -46,6 +46,7 @@ Partial Class frm_orderdata_a173596
         Me.unit = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.ftotal = New System.Windows.Forms.Label()
+        Me.back = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
@@ -88,10 +89,10 @@ Partial Class frm_orderdata_a173596
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(407, 140)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(397, 140)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(88, 20)
+        Me.Label4.Size = New System.Drawing.Size(101, 24)
         Me.Label4.TabIndex = 71
         Me.Label4.Text = "Order ID :"
         '
@@ -249,7 +250,7 @@ Partial Class frm_orderdata_a173596
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(6, 3)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(299, 106)
+        Me.Label7.Size = New System.Drawing.Size(299, 150)
         Me.Label7.TabIndex = 78
         Me.Label7.Text = "Name"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -264,7 +265,7 @@ Partial Class frm_orderdata_a173596
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(314, 3)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(86, 106)
+        Me.Label8.Size = New System.Drawing.Size(86, 150)
         Me.Label8.TabIndex = 79
         Me.Label8.Text = "Quantity"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -279,7 +280,7 @@ Partial Class frm_orderdata_a173596
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(717, 3)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(301, 106)
+        Me.Label9.Size = New System.Drawing.Size(301, 150)
         Me.Label9.TabIndex = 80
         Me.Label9.Text = "Total"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -294,7 +295,7 @@ Partial Class frm_orderdata_a173596
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.Location = New System.Drawing.Point(409, 3)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(299, 106)
+        Me.Label11.Size = New System.Drawing.Size(299, 150)
         Me.Label11.TabIndex = 81
         Me.Label11.Text = "Price Per Unit"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -304,11 +305,12 @@ Partial Class frm_orderdata_a173596
         Me.item.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.item.BackColor = System.Drawing.Color.Transparent
+        Me.item.AutoSize = True
+        Me.item.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.item.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.item.Location = New System.Drawing.Point(6, 112)
+        Me.item.Location = New System.Drawing.Point(6, 156)
         Me.item.Name = "item"
-        Me.item.Size = New System.Drawing.Size(299, 68)
+        Me.item.Size = New System.Drawing.Size(299, 24)
         Me.item.TabIndex = 82
         Me.item.Text = "item"
         Me.item.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -334,11 +336,11 @@ Partial Class frm_orderdata_a173596
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.total.AutoSize = True
-        Me.total.BackColor = System.Drawing.Color.Transparent
+        Me.total.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.total.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.total.Location = New System.Drawing.Point(717, 112)
+        Me.total.Location = New System.Drawing.Point(717, 156)
         Me.total.Name = "total"
-        Me.total.Size = New System.Drawing.Size(301, 68)
+        Me.total.Size = New System.Drawing.Size(301, 24)
         Me.total.TabIndex = 84
         Me.total.Text = "total"
         Me.total.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -349,11 +351,11 @@ Partial Class frm_orderdata_a173596
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.quantity.AutoSize = True
-        Me.quantity.BackColor = System.Drawing.Color.Transparent
+        Me.quantity.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.quantity.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.quantity.Location = New System.Drawing.Point(314, 112)
+        Me.quantity.Location = New System.Drawing.Point(314, 156)
         Me.quantity.Name = "quantity"
-        Me.quantity.Size = New System.Drawing.Size(86, 68)
+        Me.quantity.Size = New System.Drawing.Size(86, 24)
         Me.quantity.TabIndex = 85
         Me.quantity.Text = "quantity"
         Me.quantity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -364,11 +366,11 @@ Partial Class frm_orderdata_a173596
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.unit.AutoSize = True
-        Me.unit.BackColor = System.Drawing.Color.Transparent
+        Me.unit.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.unit.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.unit.Location = New System.Drawing.Point(409, 112)
+        Me.unit.Location = New System.Drawing.Point(409, 156)
         Me.unit.Name = "unit"
-        Me.unit.Size = New System.Drawing.Size(299, 68)
+        Me.unit.Size = New System.Drawing.Size(299, 24)
         Me.unit.TabIndex = 86
         Me.unit.Text = "unit"
         Me.unit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -404,7 +406,7 @@ Partial Class frm_orderdata_a173596
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ftotal.AutoSize = True
-        Me.ftotal.BackColor = System.Drawing.Color.Transparent
+        Me.ftotal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.ftotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ftotal.Location = New System.Drawing.Point(717, 183)
         Me.ftotal.Name = "ftotal"
@@ -412,6 +414,22 @@ Partial Class frm_orderdata_a173596
         Me.ftotal.TabIndex = 87
         Me.ftotal.Text = "ftotal"
         Me.ftotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'back
+        '
+        Me.back.BackColor = System.Drawing.Color.Red
+        Me.back.BackgroundImage = Global.prj_hypers_a173586.My.Resources.Resources.jhnb
+        Me.back.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.back.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.back.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.back.Location = New System.Drawing.Point(934, 742)
+        Me.back.Name = "back"
+        Me.back.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.back.Size = New System.Drawing.Size(93, 38)
+        Me.back.TabIndex = 84
+        Me.back.Text = "BACK "
+        Me.back.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.back.UseVisualStyleBackColor = False
         '
         'frm_orderdata_a173596
         '
@@ -421,6 +439,7 @@ Partial Class frm_orderdata_a173596
         Me.BackgroundImage = Global.prj_hypers_a173586.My.Resources.Resources.Main_Menu_BG13
         Me.ClientSize = New System.Drawing.Size(1032, 792)
         Me.ControlBox = False
+        Me.Controls.Add(Me.back)
         Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Label13)
@@ -467,4 +486,5 @@ Partial Class frm_orderdata_a173596
     Friend WithEvents Label12 As Label
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents ftotal As Label
+    Friend WithEvents back As Button
 End Class

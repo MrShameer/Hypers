@@ -29,7 +29,6 @@ Partial Class frm_mainmenu_a173586
         Me.staff = New System.Windows.Forms.Button()
         Me.customer = New System.Windows.Forms.Button()
         Me.order = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.back = New System.Windows.Forms.Button()
         Me.Upp = New System.Windows.Forms.Button()
         Me.Inp = New System.Windows.Forms.Button()
@@ -40,6 +39,8 @@ Partial Class frm_mainmenu_a173586
         Me.delc = New System.Windows.Forms.Button()
         Me.inc = New System.Windows.Forms.Button()
         Me.upc = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -130,22 +131,6 @@ Partial Class frm_mainmenu_a173586
         Me.order.Text = "ORDER"
         Me.order.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.order.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Button1.BackgroundImage = Global.prj_hypers_a173586.My.Resources.Resources.transac
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.Button1.Font = New System.Drawing.Font("Forte", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Navy
-        Me.Button1.Location = New System.Drawing.Point(648, 321)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(225, 94)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "TRANSACTION"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'back
         '
@@ -271,6 +256,30 @@ Partial Class frm_mainmenu_a173586
         Me.upc.Text = "Update Customer"
         Me.upc.UseVisualStyleBackColor = False
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Green
+        Me.Button2.Location = New System.Drawing.Point(658, 324)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(199, 40)
+        Me.Button2.TabIndex = 26
+        Me.Button2.Text = "Make Order"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Green
+        Me.Button1.Location = New System.Drawing.Point(658, 381)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(199, 40)
+        Me.Button1.TabIndex = 27
+        Me.Button1.Text = "Order Invoice"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'frm_mainmenu_a173586
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -278,6 +287,8 @@ Partial Class frm_mainmenu_a173586
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(876, 497)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.delc)
         Me.Controls.Add(Me.inc)
         Me.Controls.Add(Me.upc)
@@ -288,7 +299,6 @@ Partial Class frm_mainmenu_a173586
         Me.Controls.Add(Me.Inp)
         Me.Controls.Add(Me.Upp)
         Me.Controls.Add(Me.back)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.order)
         Me.Controls.Add(Me.customer)
         Me.Controls.Add(Me.staff)
@@ -314,7 +324,6 @@ Partial Class frm_mainmenu_a173586
     Friend WithEvents staff As Button
     Friend WithEvents customer As Button
     Friend WithEvents order As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents back As Button
     Friend WithEvents Upp As Button
     Friend WithEvents Inp As Button
@@ -325,4 +334,6 @@ Partial Class frm_mainmenu_a173586
     Friend WithEvents delc As Button
     Friend WithEvents inc As Button
     Friend WithEvents upc As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
 End Class

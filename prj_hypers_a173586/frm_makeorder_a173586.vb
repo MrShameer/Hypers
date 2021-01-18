@@ -96,7 +96,7 @@
     End Sub
 
     Private Sub back_Click(sender As Object, e As EventArgs) Handles back.Click
-        frm_mainmenu_a173586.Show()
+        'frm_mainmenu_a173586.Show()
         Me.Close()
     End Sub
 

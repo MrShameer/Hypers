@@ -1,8 +1,7 @@
 ﻿Public Class frm_orderdata_a173596
     Private Sub frm_orderdata_a173596_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         order()
-        'orderid.SelectedIndex = 0
-        update(orderid.Text)
+        updates(orderid.Text)
     End Sub
 
     Private Sub order()
@@ -14,7 +13,7 @@
         orderid.DisplayMember = "FLD_ORDER_ID"
     End Sub
 
-    Private Sub update(ids As String)
+    Private Sub updates(ids As String)
         item.Text = ""
         quantity.Text = ""
         unit.Text = ""
@@ -26,11 +25,8 @@
         sid.Text = dat.Rows(0).Item("FLD_STAFF_ID")
 
         Dim tran As DataTable = run_sql_query("SELECT * FROM TBL_TRANSACTIONS_A173586 WHERE FLD_ORDER_ID = '" & ids & "'")
-        'MsgBox(tran.Rows.Count)
         For Each row As DataRow In tran.Rows
             Dim pro As DataTable = run_sql_query("SELECT FLD_PRODUCT_NAME, FLD_PRICE FROM TBL_PRODUCTS_A173586 WHERE FLD_PRODUCT_ID = '" & row.Item("FLD_PRODUCT_ID") & "'")
-            'Dim tx As String = item.Text +
-            ' MsgBox(tx)
             item.Text += pro.Rows(0).Item("FLD_PRODUCT_NAME") + Environment.NewLine
             quantity.Text += row.Item("FLD_QUANTITY") + Environment.NewLine
             unit.Text += "RM" + pro.Rows(0).Item("FLD_PRICE").ToString + Environment.NewLine
@@ -42,18 +38,17 @@
         unit.Text = unit.Text.Remove(unit.Text.LastIndexOf(Environment.NewLine))
         total.Text = total.Text.Remove(total.Text.LastIndexOf(Environment.NewLine))
         ftotal.Text = "RM" + ftotal.Text
-        'total.Text = "RM" + total.Text
-        '' item.Text = tran.Rows(0).Item("FLD_PRODUCT_ID")
-        'did.Text = tran.Rows(0).Item("FLD_ORDER_DATE")
-        'sid.Text = tran.Rows(0).Item("FLD_STAFF_ID")
     End Sub
 
     Private Sub orderid_SelectedIndexChanged(sender As Object, e As EventArgs) Handles orderid.SelectedIndexChanged
         Try
-            update(orderid.Text)
+            updates(orderid.Text)
         Catch ex As Exception
 
         End Try
+    End Sub
 
+    Private Sub back_Click(sender As Object, e As EventArgs) Handles back.Click
+        Me.Close()
     End Sub
 End Class

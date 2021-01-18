@@ -23,7 +23,7 @@
         '' Me.Hide()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         frm_transaction_a173586.Show()
         ''  Me.Hide()
     End Sub
@@ -66,5 +66,13 @@
 
     Private Sub delc_Click(sender As Object, e As EventArgs) Handles delc.Click
         frm_customerdelete_a173586.Show()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        frm_makeorder_a173586.Show()
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        frm_orderdata_a173596.Show()
     End Sub
 End Class
