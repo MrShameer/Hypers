@@ -1,4 +1,5 @@
 ﻿Public Class frm_orderdata_a173596
+    Dim bmp As Bitmap
     Private Sub frm_orderdata_a173596_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         order()
         updates(orderid.Text)
@@ -50,5 +51,23 @@
 
     Private Sub back_Click(sender As Object, e As EventArgs) Handles back.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim graphic As Graphics
+        bmp = New Bitmap(Me.Width - 10, Me.Height)
+        graphic = Graphics.FromImage(bmp)
+        graphic.CopyFromScreen(Me.Location.X, Me.Location.Y, 0, 0, bmp.Size)
+        PrintDocument1.DefaultPageSettings.Landscape = True
+        PrintDocument1.DefaultPageSettings.PaperSize = New System.Drawing.Printing.PaperSize("custom", Me.Width, Me.Height)
+        ' PrintDocument1.PrinterSettings.PrintToFile = True
+        '' PrintDocument1.PrinterSettings.PrintFileName = "ghvgh"
+        PrintDocument1.Print()
+    End Sub
+
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        e.Graphics.DrawImage(bmp, 0, 0)
+        PrintDocument1.PrinterSettings.PrinterName = "Microsoft Print to PDF"
+        PrintDocument1.PrinterSettings.PrintFileName = "ali.pdf"
     End Sub
 End Class

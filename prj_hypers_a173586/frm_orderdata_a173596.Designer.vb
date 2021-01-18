@@ -47,6 +47,8 @@ Partial Class frm_orderdata_a173596
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.ftotal = New System.Windows.Forms.Label()
         Me.back = New System.Windows.Forms.Button()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
@@ -431,6 +433,21 @@ Partial Class frm_orderdata_a173596
         Me.back.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.back.UseVisualStyleBackColor = False
         '
+        'PrintDocument1
+        '
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Green
+        Me.Button2.Location = New System.Drawing.Point(416, 740)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(199, 40)
+        Me.Button2.TabIndex = 85
+        Me.Button2.Text = "Print Invoice"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'frm_orderdata_a173596
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -439,6 +456,7 @@ Partial Class frm_orderdata_a173596
         Me.BackgroundImage = Global.prj_hypers_a173586.My.Resources.Resources.Main_Menu_BG13
         Me.ClientSize = New System.Drawing.Size(1032, 792)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.back)
         Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Controls.Add(Me.TableLayoutPanel1)
@@ -487,4 +505,6 @@ Partial Class frm_orderdata_a173596
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents ftotal As Label
     Friend WithEvents back As Button
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents Button2 As Button
 End Class
