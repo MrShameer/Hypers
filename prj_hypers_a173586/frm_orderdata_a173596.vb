@@ -51,7 +51,6 @@
     Private Sub orderid_SelectedIndexChanged(sender As Object, e As EventArgs) Handles orderid.SelectedIndexChanged
         Try
             update(orderid.Text)
-
         Catch ex As Exception
 
         End Try

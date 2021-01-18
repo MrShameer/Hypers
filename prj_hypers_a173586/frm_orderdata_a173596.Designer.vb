@@ -100,7 +100,7 @@ Partial Class frm_orderdata_a173596
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Bauhaus 93", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(321, 187)
+        Me.Label3.Location = New System.Drawing.Point(321, 178)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(390, 54)
         Me.Label3.TabIndex = 73
@@ -108,6 +108,9 @@ Partial Class frm_orderdata_a173596
         '
         'Label13
         '
+        Me.Label13.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label13.BackColor = System.Drawing.Color.Transparent
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.Location = New System.Drawing.Point(341, 241)
