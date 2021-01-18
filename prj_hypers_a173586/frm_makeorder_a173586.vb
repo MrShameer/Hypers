@@ -1,13 +1,11 @@
 ﻿Public Class frm_makeorder_a173586
-
-    Dim count As Integer
     Private Sub frm_makeorder_a173586_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '' cust.Text = generate_customer()
         staffid.Text = generate_staff()
         orderid.Text = generate_order()
-
-        cust()
         prod()
+        cust()
+
         Dim data As DataTable = run_sql_query("SELECT * FROM TBL_TRANSACTIONS_A173586")
         '' Dim df As Integer = data.Columns.Count
         ''MsgBox(df)
@@ -17,8 +15,7 @@
             grdcart.Columns(i).HeaderText = data.Columns(i).ColumnName
         Next
         refresh_text(productid.Text)
-        count = 0
-        cartprice.Text = count
+        cartprice.Text = 0
     End Sub
 
     Private Sub refresh_text(ids As String)
@@ -140,6 +137,8 @@
 
     Private Sub customer_SelectedIndexChanged(sender As Object, e As EventArgs) Handles customer.SelectedIndexChanged
         grdcart.Rows.Clear()
+        productid.SelectedIndex = 0
+        cartprice.Text = ""
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -183,22 +182,28 @@
 
 
             Beep()
-            MsgBox("Transaction successful!")
+            If (grdcart.Rows.Count = 0) Then
+                MsgBox("Please Add Item To Cart")
+            Else
+                MsgBox("Transaction successful!")
+            End If
+
             ''refresh_grid()
             grdcart.Rows.Clear()
 
             staffid.Text = generate_staff()
+            orderid.Text = generate_order()
 
-            refresh_text(productid.Text)
-
+            productid.SelectedIndex = 0
+            cartprice.Text = ""
         Catch ex As Exception
 
             Beep()
-        '' MsgBox("Problem with transaction:" & vbCrLf & vbCrLf & ex.Message)
+            MsgBox("Problem with transaction:" & vbCrLf & vbCrLf & ex.Message)
 
-        mytransaction.Rollback()
+            mytransaction.Rollback()
             myconnection2.Close()
-        '' refresh_grid()
+            '' refresh_grid()
 
         End Try
     End Sub

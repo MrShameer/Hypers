@@ -234,6 +234,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="frm_orderdata_a173596.Designer.vb">
+      <DependentUpon>frm_orderdata_a173596.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_orderdata_a173596.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frm_customerdelete_a173586.resx">
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_makeorder_a173586.resx">
       <DependentUpon>frm_makeorder_a173586.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_orderdata_a173596.resx">
+      <DependentUpon>frm_orderdata_a173596.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_orderlist_a173586.resx">
       <DependentUpon>frm_orderlist_a173586.vb</DependentUpon>
