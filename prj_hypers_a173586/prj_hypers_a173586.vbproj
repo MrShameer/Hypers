@@ -187,6 +187,12 @@
     <Compile Include="frm_productupdate_a173586.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_splashscreen_a173586.Designer.vb">
+      <DependentUpon>frm_splashscreen_a173586.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_splashscreen_a173586.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_staffdelete_a173586.Designer.vb">
       <DependentUpon>frm_staffdelete_a173586.vb</DependentUpon>
     </Compile>
@@ -280,6 +286,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_productupdate_a173586.resx">
       <DependentUpon>frm_productupdate_a173586.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_splashscreen_a173586.resx">
+      <DependentUpon>frm_splashscreen_a173586.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_staffdelete_a173586.resx">
       <DependentUpon>frm_staffdelete_a173586.vb</DependentUpon>

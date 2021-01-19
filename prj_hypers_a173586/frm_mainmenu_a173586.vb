@@ -1,7 +1,6 @@
 ﻿Public Class frm_mainmenu_a173586
     Private Sub product_Click(sender As Object, e As EventArgs) Handles product.Click
         frm_productdetails_a173586.Show()
-        ''Me.Hide()
     End Sub
 
     Private Sub frm_mainmenu_a173586_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -10,26 +9,22 @@
 
     Private Sub staff_Click(sender As Object, e As EventArgs) Handles staff.Click
         frm_stafflist_a173586.Show()
-        '' Me.Hide()
     End Sub
 
     Private Sub customer_Click(sender As Object, e As EventArgs) Handles customer.Click
         frm_customerlist_a173586.Show()
-        ''Me.Hide()
     End Sub
 
     Private Sub order_Click(sender As Object, e As EventArgs) Handles order.Click
         frm_orderlist_a173586.Show()
-        '' Me.Hide()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         frm_transaction_a173586.Show()
-        ''  Me.Hide()
     End Sub
 
     Private Sub back_Click(sender As Object, e As EventArgs) Handles back.Click
-        Me.Close()
+        Application.Exit()
     End Sub
 
     Private Sub Inp_Click(sender As Object, e As EventArgs) Handles Inp.Click

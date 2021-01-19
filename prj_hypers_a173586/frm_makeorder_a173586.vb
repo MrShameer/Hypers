@@ -146,17 +146,10 @@
         myconnection2.Open()
         mytransaction = myconnection2.BeginTransaction
         Try
-
-
-            ''Dim mytransactions As OleDb.OleDbTransaction
-            '' myconnection2.Open()
-            '' mytransactions = myconnection2.BeginTransaction
-
             Dim orderids As String = orderid.Text
             Dim orderdate As String = DateTime.Now.ToString("dd MMMM yyyy, hh:mm dddd")
             Dim customerids As String = customer.Text
             Dim staffids As String = staffid.Text
-            '' Dim regdate As String = grd_newreg(4, i).Value
 
             Dim mysqls As String = "INSERT INTO TBL_ORDERS_A173586 VALUES ('" & orderids & "', '" & orderdate & "', '" & customerids & "', '" & staffids & "')"
             Dim mywriters As New OleDb.OleDbCommand(mysqls, myconnection2,
@@ -168,7 +161,6 @@
                 Dim productids As String = grdcart(1, i).Value
                 Dim quantitys As String = grdcart(2, i).Value
                 Dim tprices As String = grdcart(3, i).Value
-                '' Dim regdate As String = grd_newreg(4, i).Value
 
                 Dim mysql As String = "INSERT INTO TBL_TRANSACTIONS_A173586 VALUES ('" & orderidss & "', '" & productids & "', '" & quantitys & "', '" & tprices & "')"
                 Dim mywriter As New OleDb.OleDbCommand(mysql, myconnection2,
@@ -177,34 +169,28 @@
 
             Next
 
-            mytransaction.Commit()
-            myconnection2.Close()
-
-
             Beep()
             If (grdcart.Rows.Count = 0) Then
-                MsgBox("Please Add Item To Cart")
+                MessageBox.Show("Please Add Item To Cart", "Checkout")
             Else
-                MsgBox("Transaction successful!")
+                mytransaction.Commit()
+                MessageBox.Show("Transaction successful!", "Checkout")
+                staffid.Text = generate_staff()
+                orderid.Text = generate_order()
+
+                productid.SelectedIndex = 0
+                cartprice.Text = ""
             End If
-
-            ''refresh_grid()
             grdcart.Rows.Clear()
+            myconnection2.Close()
 
-            staffid.Text = generate_staff()
-            orderid.Text = generate_order()
-
-            productid.SelectedIndex = 0
-            cartprice.Text = ""
         Catch ex As Exception
-
             Beep()
-            MsgBox("Problem with transaction:" & vbCrLf & vbCrLf & ex.Message)
+            ' MsgBox("Problem with transaction:" & vbCrLf & vbCrLf & ex.Message)
+            MessageBox.Show("Problem with transaction:" & vbCrLf & vbCrLf & ex.Message, "Checkout")
 
             mytransaction.Rollback()
             myconnection2.Close()
-            '' refresh_grid()
-
         End Try
     End Sub
 End Class
