@@ -453,7 +453,6 @@ Partial Class frm_makeorder_a173586
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.prj_hypers_a173586.My.Resources.Resources.Main_Menu_BG13
         Me.ClientSize = New System.Drawing.Size(1060, 836)
-        Me.ControlBox = False
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.cartprice)
         Me.Controls.Add(Me.remove)
@@ -485,8 +484,9 @@ Partial Class frm_makeorder_a173586
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frm_makeorder_a173586"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Make Order"
